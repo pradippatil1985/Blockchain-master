@@ -1,0 +1,378 @@
+Ledger : The ledger is the system of record for a business
+
+Two types of asset:
+Tangible, such as house
+Intangible, such as a mortgage
+
+Intangible assets fall into several categories
+-Financial, such as bonds
+-Intellectual, such as patents
+-Digital, such as music
+
+A transaction is an asset transfer on or off the ledger
+e.g. Sachin gives a car to Nilesh
+
+
+What is blockchain?
+A shared ledger technology allowing any participant in the business network to see THE system of record, the ledger.
+
+Support business network
+-does this by providing a decentralized peer-to-peer architecture with nodes consisting of market participants.(e.g. banks and securities firms)
+-Uses a protocol that peers validate and commit transactions in order to reach consensus.
+Support shared ledger
+-records all transactions across the business network
+-shares the ledger among participants
+-Replicates the ledger, so that each participant has their own copy
+-Makes the shared ledger permissioned, so all of the participants can only see their appropriate transactions.
+
+
+Provenance use case : Vehicle maintenance
+What?
+-Provenance of each component part in complex system hard to track
+-Manufacturer, production date, batch and even manufacturing machine program 
+How?
+-Blockchain holds complete provenance details of each component part
+-Accessible by each manufacturer in the production process, the aircraft owners, maintainers and
+ government regulators
+
+
+Immutability use case : financial ledger
+What?
+Financial data in a large organization dispersed throughout many divisions and geographies
+Audit and compliance needs indelible record of all key transactions over reporting period.
+Blockchain collects transaction records from diverse set of financial systems
+Append only and tamper proof qualities create high confidence in the financial audit trail
+Privacy features ensure authorized user access
+Benefits
+-lowers cost of audit and regulatory compliance
+-provides seek and find access to auditors and regulators
+-changes nature of compliance from passive to active
+
+other potential use cases:
+-Real estate records
+Vehicle registrations
+Citizen Identity
+Retail Banking
+Supply chain
+Trade finance
+Digital property management
+
+
+Blockchain is NOT
+suited to high performance(milisecond) transactions
+for just one participant(no business network)
+A replicated database replacement
+A messaging solution
+A transaction processing replacement
+Suited for low value, high volume transactions
+
+
+
+Blockchain Asset Transfer Demo :(Blockchain Car leasing Demo)
+
+Car Manufacturer :
+
+shared ledger
+
+1)Manufacturer
+   owned by manufacturer
+   commited to the blockchain
+
+Transfer :
+Changes ownership on Smart Contract(business rules)
+waits for consensus
+
+2)Dealership
+  Now owned by Dealer
+  Change committed to the blockchain(consensus achieved)
+  Vehicle A no longer under Manufacturer control
+
+
+
+Blockchain fabric
+-----------------
+A fabric is:
+- technology foundation for implementing a blockchain network.
+- can include nodes, APIs, membership services and more
+- can be optimized for a single blockchain network or allow you to create multiple networks
+- can be optimized for trusted participants or untrusted participants
+
+
+Several fabrics exist today
+-Examples:Bitcoin, IBM Blockchain, Ripple, Ethereum
+
+
+
+Hyperledger project
+-------------------
+Linux Foundation announced the project 17th Dec 2015.
+New Hyperledger project to transform the way business transactions are conducted around the world.
+Project members understand that an open source collaborative development strategy supporting multiple players in multiple industries is required.
+Several companies have submitted candidates for the base code, IBM's is called Fabric:
+- https://github.com/hyperledger/fabric
+
+
+Enable adoption of shared ledger technology at a pace and depth not achievable by any one company or industry.
+
+IBM offerings that support Hyperledger Fabric:
+IBM Blockchain on IBM CLOUD
+Bluemix service
+Your private blockchain network in 1 click
+ - Starter Developer Network
+ - High Security Business Network
+Learn with sample applications
+Develop your own smart contract
+
+
+
+
+The participants in a blockchain network
+----------------------------------------
+Regulator - performs oversight, overall authority in the network
+            require access to entire ledger
+            data regulator - ensuring privacy in data access
+Blockchain Developer - actually creates application.
+                       smart contract,implements business process
+Blockchain Network operator - operations of network
+
+Traditional Processing Platforms - can be  used by blockchain applications
+
+Certificate Authority - Manage certificate required to run blockchain
+
+Blockchain users - B2B transactions
+
+The components in a Blockchain
+------------------------------
+smart contract - application level code that stored under ledger  part of transaction
+                 run transactions
+
+Ledger - contains blockchain of invoked transactions
+         also contains world state which is state of ledger
+         world state - collection of variables that reflects the result of prviously invoked transactions
+
+Consensus Network - Blockchain is decentralized network
+                    one of the challenge in this network to maintain consistent state.
+
+Membership - Manages various certificate used within network.
+             Identity certificate.
+             also manages transaction level certificate.
+             manages other aspects permissioned access, confidentiality making sure members of the network gets access parts of Ledger
+
+Events - various events are generated during operations of network.
+         e.g. a new block is added in blockchain
+              a smart contract is imported.
+          
+
+Systems Management - create,monitor and manage various other components.
+                     Bootstraping a network first time
+                     adding additional smart contract
+Wallet - Securely manages a user security credintials
+
+System Integration - Integrates blockchain bidirectionally with external system
+                     technically not a part of of blockchain 
+                     
+
+Blockchain applications and the ledger :
+----------------------------------------
+Application - business process that need to interact with ledger
+              could be written in diff lang and diff platforms
+              Application can invoke smart contracts they can also access ledger directly.
+Smart contract - like stored procedure in a database that performs transactions on the ledger.
+                 read and update world state.
+
+Ledger - Two components in a Ledger 
+         1)world state - maintains the current state which is the result of executed transactions
+                         e.g. specifiec owner of particular asset
+         2)blockchain - which comprise the block which contain transaction themselves.
+           
+             
+             
+
+
+Operating Blockchain Networks(configuring for replicated ledger):
+-----------------------------------------------------------------
+
+
+PBFT - Default consensus mechanism used by IBM blockchain.
+Practical Byzantine Fault Tolerance (PBFT) is one flavor of consensus protocol. 
+
+Non validting peer - runs REST services that external application will connect to.
+validating peer
+
+Permissioned Ledger Access(Transaction and identity privacy)
+
+Chaincode
+---------
+Contains smart contract and runs on validating nodes
+Chaincode transactions can execute only a defined time window.
+
+
+
+open ledger
+
+Bitcoin - digital coin
+Money transfer
+A(India) want to transfer money to B(USA)
+Using 3rd Trusted Party we transfer it.Trused because it identifies B's details.
+
+
+A-B
+A transferred $5
+B got $4.9
+3 days
+
+Using Blockchain - without 3rd party
+time - Immediately
+cost - cheaper than above
+
+
+distributed open ledger
+one challenge - everybody should have synchronized copy.
+                i.e. all the participants in the network see the same copy in the ledger.
+
+
+
+Docker :
+Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
+
+
+IBM chaincode link
+------------------
+https://github.com/IBM-Blockchain/learn-chaincode
+
+
+
+
+
+Deploy chaincode using REST api
+-------------------------------
+Get the IP address of the node:
+docker-machine ip singlenode
+
+Register user on the node (change the IP in the URL as fetched in above step):
+http://192.168.99.100:7050/registrar
+JSON:
+{
+"enrollId":"test_user0",
+"enrollSecret":"MS9qrN8hFjlE"
+}
+ 
+Deploy chaincode on node:
+http://192.168.99.100:7050/chaincode
+{
+  "jsonrpc": "2.0",
+  "method": "deploy",
+  "params": {
+    "type": 1,
+    "chaincodeID": {
+      "path": "https://github.com/devchaud/Region"
+    },
+    "ctorMsg": {
+      "function": "init",
+      "args": [
+        "hi there"
+      ]
+    },
+    "secureContext": "test_user0"
+  },
+  "id": 1
+}
+
+
+
+Output:
+{
+"jsonrpc": "2.0",
+"result": 
+{
+"status": "OK",
+"message": "1f3a7e1e441db228ab4df7f92b0275a2708ad2628b139f6e02c5864292f9eeb8012d2a4d1aaad620bcc663b7f773591c2210496d7bf78640bb1205606879bc5a"
+}
+,
+"id": 1
+}
+
+
+Add transaction to blockchain using REST API
+
+http://192.168.99.100:7050/chaincode
+
+{
+  "jsonrpc": "2.0",
+  "method": "invoke",
+  "params": {
+      "type": 1,
+      "chaincodeID":{
+          "name":"<chaincode_id>"
+      },
+      "ctorMsg": {
+         "args":["_regionIndexTxStr", "EMEA", "3406949", "InfoSpace, Inc", "EMEAMARIUW", "311", "311 MARINE HULL", "Policy1", "7098", "CFDL8047", "486063", "AON Limited", "20161105", "20171105", "SRI", "SRI SE - Zurich - International Bus"]
+      },
+      "secureContext":  “test_user0"
+  },
+  "id": 3
+}
+
+
+Query blockchain using REST API
+http://192.168.99.100:7050/chaincode
+
+{
+  "jsonrpc": "2.0",
+  "method": "query",
+  "params": {
+      "type": 1,
+      "chaincodeID":{
+          "name":"<chaincode_id>"
+      },
+      "ctorMsg": {
+         "args":["query", "Policy1"]
+      },
+      "secureContext" : “test_user0”
+  },
+  "id": 5
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
